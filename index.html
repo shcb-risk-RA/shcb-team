@@ -34,16 +34,13 @@
         .header-inner {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 15px 20px;
+            padding: 10px 20px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
         }
         .bank-logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            text-decoration: none;
+            display: none;
         }
         .logo-circle {
             width: 60px;
@@ -74,10 +71,11 @@
             letter-spacing: 1px;
             text-transform: uppercase;
         }
-        .page-title {
-            display: flex;
-            align-items: center;
-            gap: 15px;
+        .banner-img {
+            width: 100%;
+            max-width: 1200px;
+            display: block;
+            margin: 0 auto;
         }
         .page-title h1 {
             font-size: 24px;
@@ -376,17 +374,7 @@
     
     <header class="main-header">
         <div class="header-inner">
-            <a href="#" class="bank-logo">
-                <div class="logo-circle">SB</div>
-                <div class="logo-text">
-                    <span class="cn">上海商業銀行</span>
-                    <span class="en">Shanghai Commercial Bank</span>
-                </div>
-            </a>
-            <div class="page-title">
-                <div class="divider"></div>
-                <h1>風險分析<span>團隊</span>網站</h1>
-            </div>
+            <img src="banner.jpg" alt="上海商業銀行 風險分析團隊" class="banner-img">
         </div>
     </header>
     
