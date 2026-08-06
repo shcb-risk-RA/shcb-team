@@ -40,12 +40,15 @@
             justify-content: center;
         }
         .bank-logo {
-            display: none;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
         }
         .logo-circle {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #c41230 0%, #e62040 100%);
+            background: linear-gradient(135deg, #6b7280 0%, #9ca3af 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -53,7 +56,7 @@
             color: white;
             font-weight: 700;
             font-size: 22px;
-            box-shadow: 0 4px 12px rgba(196,18,48,0.3);
+            box-shadow: 0 4px 12px rgba(107,114,128,0.3);
         }
         .logo-text {
             display: flex;
@@ -70,33 +73,6 @@
             color: #666;
             letter-spacing: 1px;
             text-transform: uppercase;
-        }
-        .banner-img {
-            width: 100%;
-            display: block;
-            margin: 0;
-            padding: 0;
-            border: none;
-            outline: none;
-        }
-        .page-title h1 {
-            font-size: 24px;
-            color: #003366;
-            font-weight: 700;
-            letter-spacing: 2px;
-        }
-        .page-title span {
-            color: #c41230;
-        }
-        .page-title .divider {
-            width: 2px;
-            height: 30px;
-            background: #B8D4E8;
-        }
-        .page-title .divider {
-            width: 2px;
-            height: 30px;
-            background: #B8D4E8;
         }
         .main-nav {
             background: #B8D4E8;
@@ -125,191 +101,118 @@
             background: #003366;
             color: white;
         }
-        .banner {
-            background: linear-gradient(135deg, #F5F9FC 0%, #E0EEF8 30%, #D0E4F0 60%, #C0DAE8 100%);
-            padding: 60px 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            border-bottom: 4px solid #B8D4E8;
+        .back-link {
+            display: inline-block;
+            margin: 25px 0;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        .banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.4) 0%, transparent 50%);
-        }
-        .banner-content {
-            position: relative;
-            z-index: 1;
-        }
-        .banner h2 {
-            font-size: 28px;
-            color: #003366;
-            margin-bottom: 15px;
-            font-weight: 700;
-            letter-spacing: 4px;
-            text-shadow: 2px 2px 4px rgba(0,51,102,0.1);
-        }
-        .banner h2 span {
-            color: #c41230;
-        }
-        .banner p {
+        .back-link a {
+            color: #1a6fbf;
+            text-decoration: none;
             font-size: 14px;
-            color: #666;
-            letter-spacing: 3px;
+            padding: 10px 20px;
+            border: 2px solid #1a6fbf;
+            border-radius: 6px;
+            transition: all 0.3s;
         }
-        .content {
+        .back-link a:hover {
+            background: #1a6fbf;
+            color: white;
+        }
+        .profile-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 50px 20px;
+            padding: 20px;
         }
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        .section-header h2 {
-            font-size: 26px;
-            color: #003366;
-            margin-bottom: 12px;
-            font-weight: 700;
-        }
-        .section-header p {
-            color: #666;
-            font-size: 14px;
-        }
-        .section-header::after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, #1a6fbf, #c41230);
-            margin: 20px auto 0;
-            border-radius: 2px;
-        }
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        .team-card {
+        .profile-card {
             background: white;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 16px rgba(0,51,102,0.1);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-            display: block;
             border: 2px solid #d0e8f0;
         }
-        .team-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 32px rgba(0,51,102,0.2);
-            border-color: #1a6fbf;
-        }
-        .card-header {
+        .profile-header {
             background: linear-gradient(135deg, #1a6fbf 0%, #2980b9 100%);
             color: white;
-            padding: 30px;
+            padding: 30px 30px;
             text-align: center;
             position: relative;
+            max-height: 180px;
+            overflow: hidden;
         }
-        .card-header::after {
+        .profile-header::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #c41230, #e62040);
+            height: 5px;
+            background: linear-gradient(90deg, #1a6fbf, #2980b9);
         }
-        .avatar {
-            width: 85px;
-            height: 85px;
+        .avatar-large {
+            width: 110px;
+            height: 110px;
             border-radius: 50%;
             background: rgba(255,255,255,0.25);
-            margin: 0 auto 18px;
+            margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
+            font-size: 40px;
             font-weight: 700;
             border: 4px solid rgba(255,255,255,0.5);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
         }
-        .card-name {
-            font-size: 22px;
+        .profile-name {
+            font-size: 32px;
             font-weight: 700;
             margin-bottom: 8px;
         }
-        .card-role {
-            font-size: 13px;
-            opacity: 0.95;
-            letter-spacing: 1px;
-        }
-        .card-body {
-            padding: 28px;
-            text-align: center;
-            background: linear-gradient(180deg, #fafcfd 0%, #f5f9fc 100%);
-        }
-        .card-desc {
-            color: #555;
+        .profile-role {
             font-size: 14px;
-            line-height: 1.7;
+            opacity: 0.95;
+            letter-spacing: 2px;
         }
-        .features {
-            background: white;
-            padding: 50px 20px;
-            margin: 50px 0;
-            border-top: 4px solid #B8D4E8;
-            border-bottom: 4px solid #B8D4E8;
+        .profile-body {
+            padding: 50px 40px;
         }
-        .features-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 35px;
+        .section {
+            margin-bottom: 35px;
         }
-        .feature-item {
-            text-align: center;
-            padding: 25px;
-            background: linear-gradient(135deg, #f8fcff 0%, #f0f8fc 100%);
-            border-radius: 12px;
-            border: 1px solid #d0e8f0;
-        }
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #1a6fbf, #2980b9);
-            border-radius: 50%;
-            margin: 0 auto 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 28px;
-            box-shadow: 0 6px 16px rgba(26,111,191,0.3);
-        }
-        .feature-title {
+        .section-title {
             font-size: 18px;
-            color: #003366;
-            margin-bottom: 10px;
+            color: #4b5563;
             font-weight: 700;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #e5e7eb;
         }
-        .feature-desc {
+        .section-content {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.9;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .skill {
+            background: #f3f4f6;
+            border: 1px solid #d1d5db;
+            padding: 8px 18px;
+            border-radius: 20px;
             font-size: 13px;
-            color: #666;
-            line-height: 1.6;
+            color: #374151;
         }
         .footer {
             background: linear-gradient(180deg, #F5F7FA 0%, #e8f0f4 100%);
             border-top: 4px solid #1a6fbf;
             padding: 50px 20px 0;
+            margin-top: 50px;
         }
         .footer-inner {
             max-width: 1200px;
@@ -317,7 +220,7 @@
         }
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 35px;
             margin-bottom: 40px;
         }
@@ -391,98 +294,44 @@
         </div>
     </nav>
     
-    <div class="banner">
-        <div class="banner-content">
-            <h2>歡迎來到<span>風險分析團隊</span></h2>
-            <p>RISK ANALYSIS TEAM | 專業風險管理服務</p>
-        </div>
+    <div class="back-link">
+        <a href="index.html">← 返回團隊首頁</a>
     </div>
     
-    <div class="content">
-        <div class="section-header">
-            <h2>Hang Kwok 個人資料</h2>
-            <p>我們的專業團隊為您提供全方位的風險管理服務</p>
-        </div>
-        
-        <div class="team-grid">
-            <a href="tony.html" class="team-card">
-                <div class="card-header">
-                    <div class="avatar">TC</div>
-                    <div class="card-name">Tony Chan</div>
-                    <div class="card-role">團隊領導 · Team Leader</div>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">負責整體風險策略規劃與團隊管理，確保風險管理政策符合監管要求</p>
-                </div>
-            </a>
-            
-            <a href="vivian.html" class="team-card">
-                <div class="card-header">
-                    <div class="avatar">VZ</div>
-                    <div class="card-name">Vivian Zhang</div>
-                    <div class="card-role">風險分析師 · Risk Analyst</div>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">專責信用風險建模與市場風險評估，提供精確的風險分析報告</p>
-                </div>
-            </a>
-            
-            <a href="eddie.html" class="team-card">
-                <div class="card-header">
-                    <div class="avatar">ET</div>
-                    <div class="card-name">Eddie Tsui</div>
-                    <div class="card-role">數據科學家 · Data Scientist</div>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">負責大數據分析與預測模型開發，運用AI技術提升風險預測準確性</p>
-                </div>
-            </a>
-            
-            <a href="martin.html" class="team-card">
-                <div class="card-header">
-                    <div class="avatar">MN</div>
-                    <div class="card-name">Martin Ng</div>
-                    <div class="card-role">合規專員 · Compliance Officer</div>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">負責監管合規與內部控制審閱，確保業務操作符合監管要求</p>
-                </div>
-            </a>
-            
-            <a href="hang.html" class="team-card">
-                <div class="card-header">
-                    <div class="avatar">HK</div>
-                    <div class="card-name">Hang Kwok</div>
-                    <div class="card-role">研究助理 · Research Assistant</div>
-                </div>
-                <div class="card-body">
-                    <p class="card-desc">負責市場研究與資料整理分析，支援團隊各項研究專案</p>
-                </div>
-            </a>
-        </div>
-    </div>
-    
-    <div class="features">
-        <div class="features-inner">
-            <div class="feature-item">
-                <div class="feature-icon">📊</div>
-                <div class="feature-title">風險評估</div>
-                <div class="feature-desc">專業風險評估服務<br>確保業務合規</div>
+    <div class="profile-container">
+        <div class="profile-card">
+            <div class="profile-header">
+                <div class="avatar-large">HK</div>
+                <div class="profile-name">Hang Kwok</div>
+                <div class="profile-role">研究助理 · Research Assistant</div>
             </div>
-            <div class="feature-item">
-                <div class="feature-icon">🔒</div>
-                <div class="feature-title">合規管理</div>
-                <div class="feature-desc">嚴格把關監管要求<br>降低合規風險</div>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">📈</div>
-                <div class="feature-title">數據分析</div>
-                <div class="feature-desc">先進數據分析技術<br>精準風險預測</div>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">🤝</div>
-                <div class="feature-title">團隊協作</div>
-                <div class="feature-desc">專業團隊合作<br>提供全面解決方案</div>
+            <div class="profile-body">
+                <div class="section">
+                    <div class="section-title">職責範圍</div>
+                    <div class="section-content">
+                        負責市場研究與資料整理分析，協助團隊完成各項風險研究專案。整理行業數據與市場資訊，編製研究報告。
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <div class="section-title">專業領域</div>
+                    <div class="skills">
+                        <span class="skill">市場研究</span>
+                        <span class="skill">資料整理</span>
+                        <span class="skill">數據分析</span>
+                        <span class="skill">報告編製</span>
+                        <span class="skill">Excel</span>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <div class="section-title">工作成就</div>
+                    <div class="section-content">
+                        <p>• 完成多份市場研究報告，獲主管嘉許</p>
+                        <p>• 建立資料整理模板，提高效率 50%</p>
+                        <p>• 協助團隊完成年度風險評估專案</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -495,25 +344,6 @@
                     <ul>
                         <li><a href="#">集團簡介</a></li>
                         <li><a href="#">管理層</a></li>
-                        <li><a href="#">企業社會責任</a></li>
-                        <li><a href="#">新聞稿</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>服務範圍</h4>
-                    <ul>
-                        <li><a href="#">風險評估</a></li>
-                        <li><a href="#">合規審閱</a></li>
-                        <li><a href="#">數據分析</a></li>
-                        <li><a href="#">市場研究</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>聯絡資訊</h4>
-                    <ul>
-                        <li><a href="#">聯絡我們</a></li>
-                        <li><a href="#">就業機會</a></li>
-                        <li><a href="#">分行位置</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -521,7 +351,6 @@
                     <ul>
                         <li><a href="#">私隱政策</a></li>
                         <li><a href="#">章則及條款</a></li>
-                        <li><a href="#">網上保安資訊</a></li>
                     </ul>
                 </div>
             </div>
