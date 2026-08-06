@@ -23,10 +23,10 @@
             margin: 0 auto;
             padding: 0 20px;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
         }
-        .alert-left {
+        .alert-text-container {
             flex: 1;
             overflow: hidden;
             position: relative;
@@ -36,16 +36,16 @@
             color: #c47a10;
             font-weight: 500;
             white-space: nowrap;
-            animation: scroll-text 20s linear infinite;
+            animation: scroll-text 25s linear infinite;
             position: absolute;
-            left: 0;
+            right: 0;
             top: 0;
             height: 20px;
             line-height: 20px;
         }
         @keyframes scroll-text {
             0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
         .alert-right {
             margin-left: 20px;
@@ -302,7 +302,7 @@
 <body>
     <div class="alert-bar">
         <div class="alert-bar-inner">
-            <div class="alert-left">
+            <div class="alert-text-container">
                 <span class="alert-text">提示：此網站作RA 團隊內部溝通用途。</span>
             </div>
             <div class="alert-right">
