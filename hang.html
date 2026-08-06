@@ -6,54 +6,365 @@
     <title>Hang Kwok - 風險分析團隊</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #fff; }
-        .header { text-align: center; padding: 40px 20px; background: rgba(255,255,255,0.05); }
-        .bank-logo { font-size: 36px; margin-bottom: 10px; }
-        .bank-name { font-size: 14px; color: rgba(255,255,255,0.5); letter-spacing: 2px; }
-        .profile { max-width: 600px; margin: 40px auto; padding: 0 20px; }
-        .avatar { width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, #e94560, #0f3460); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 32px; font-weight: 700; }
-        .name { font-size: 28px; text-align: center; margin-bottom: 5px; }
-        .role { text-align: center; color: #e94560; font-size: 14px; letter-spacing: 2px; margin-bottom: 30px; }
-        .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 25px; margin-bottom: 20px; }
-        .card h3 { font-size: 14px; color: rgba(255,255,255,0.5); letter-spacing: 2px; margin-bottom: 15px; }
-        .card p { font-size: 15px; line-height: 1.8; color: rgba(255,255,255,0.8); }
-        .skills { display: flex; flex-wrap: wrap; gap: 10px; }
-        .skill { background: rgba(233, 69, 96, 0.2); border: 1px solid rgba(233, 69, 96, 0.3); padding: 6px 14px; border-radius: 20px; font-size: 12px; color: rgba(255,255,255,0.8); }
-        .back { display: inline-block; margin: 20px 20px; color: rgba(255,255,255,0.5); text-decoration: none; font-size: 14px; }
-        .back:hover { color: #e94560; }
+        body {
+            font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
+            background: #E8F4F8;
+            color: #333;
+        }
+        .alert-bar {
+            background: #FFF8E7;
+            border-bottom: 1px solid #FFE4B5;
+            padding: 12px 0;
+            font-size: 13px;
+        }
+        .alert-bar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .alert-text { color: #c47a10; font-weight: 500; }
+        .top-links a { color: #1a6fbf; text-decoration: none; margin-left: 20px; font-size: 12px; }
+        .main-header {
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+        }
+        .bank-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+        .logo-circle {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #6b7280 0%, #9ca3af 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 22px;
+            box-shadow: 0 4px 12px rgba(107,114,128,0.3);
+        }
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        .logo-text .cn {
+            font-size: 20px;
+            font-weight: 700;
+            color: #003366;
+            letter-spacing: 2px;
+        }
+        .logo-text .en {
+            font-size: 10px;
+            color: #666;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .main-nav {
+            background: #B8D4E8;
+            border-top: 2px solid #a0c4dc;
+        }
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        .nav-menu a {
+            display: block;
+            padding: 16px 28px;
+            color: #003366;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            border-right: 1px solid #a0c4dc;
+            transition: all 0.3s;
+        }
+        .nav-menu a:hover, .nav-menu a.active {
+            background: #003366;
+            color: white;
+        }
+        .back-link {
+            display: inline-block;
+            margin: 25px 0;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .back-link a {
+            color: #1a6fbf;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 10px 20px;
+            border: 2px solid #1a6fbf;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        .back-link a:hover {
+            background: #1a6fbf;
+            color: white;
+        }
+        .profile-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .profile-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,51,102,0.1);
+            border: 2px solid #d0e8f0;
+        }
+        .profile-header {
+            background: linear-gradient(135deg, #6b7280 0%, #9ca3af 100%);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+            position: relative;
+        }
+        .profile-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #1a6fbf, #2980b9);
+        }
+        .avatar-large {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.25);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            font-weight: 700;
+            border: 4px solid rgba(255,255,255,0.5);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        .profile-name {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .profile-role {
+            font-size: 14px;
+            opacity: 0.95;
+            letter-spacing: 2px;
+        }
+        .profile-body {
+            padding: 50px 40px;
+        }
+        .section {
+            margin-bottom: 35px;
+        }
+        .section-title {
+            font-size: 18px;
+            color: #4b5563;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #e5e7eb;
+        }
+        .section-content {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.9;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .skill {
+            background: #f3f4f6;
+            border: 1px solid #d1d5db;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: #374151;
+        }
+        .footer {
+            background: linear-gradient(180deg, #F5F7FA 0%, #e8f0f4 100%);
+            border-top: 4px solid #1a6fbf;
+            padding: 50px 20px 0;
+            margin-top: 50px;
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 35px;
+            margin-bottom: 40px;
+        }
+        .footer-col h4 {
+            font-size: 15px;
+            color: #003366;
+            margin-bottom: 18px;
+            font-weight: 700;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #B8D4E8;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col li {
+            margin-bottom: 12px;
+        }
+        .footer-col a {
+            color: #666;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+        .footer-col a:hover {
+            color: #1a6fbf;
+        }
+        .footer-bottom {
+            background: linear-gradient(135deg, #003366 0%, #004080 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            font-size: 12px;
+        }
+        .footer-bottom a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            margin: 0 12px;
+        }
+        .footer-bottom p {
+            margin-top: 12px;
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
-    <a href="index.html" class="back">← 返回團隊首頁</a>
-    <div class="header">
-        <div class="bank-logo">🏦</div>
-        <div class="bank-name">上海商業銀行 · 風險分析團隊</div>
-    </div>
-    <div class="profile">
-        <div class="avatar">HK</div>
-        <h1 class="name">Hang Kwok</h1>
-        <p class="role">研究助理 · Research Assistant</p>
-        
-        <div class="card">
-            <h3>職責範圍</h3>
-            <p>負責市場研究與資料整理分析，收集行業數據，撰寫研究報告，協助團隊完成基礎研究工作。</p>
-        </div>
-        
-        <div class="card">
-            <h3>專業領域</h3>
-            <div class="skills">
-                <span class="skill">市場研究</span>
-                <span class="skill">數據整理</span>
-                <span class="skill">報告撰寫</span>
-                <span class="skill">資訊檢索</span>
-                <span class="skill">Excel</span>
+    <div class="alert-bar">
+        <div class="alert-bar-inner">
+            <span class="alert-text">重要提示：請妥善保管您的銀行帳戶，切勿借出或出售</span>
+            <div class="top-links">
+                <a href="#">偏好設定</a>
+                <a href="#">聯絡我們</a>
+                <a href="#">網上理財登入</a>
             </div>
         </div>
-        
-        <div class="card">
-            <h3>工作成就</h3>
-            <p>建立市場數據庫，優化數據整理流程，協助完成多項研究報告，提升團隊工作效率。</p>
+    </div>
+    
+    <header class="main-header">
+        <div class="header-inner">
+            <a href="index.html" class="bank-logo">
+                <div class="logo-circle">SB</div>
+                <div class="logo-text">
+                    <span class="cn">上海商業銀行</span>
+                    <span class="en">Shanghai Commercial Bank</span>
+                </div>
+            </a>
+        </div>
+    </header>
+    
+    <nav class="main-nav">
+        <div class="nav-inner">
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">個人理財</a></li>
+                <li><a href="#">商業理財</a></li>
+                <li><a href="#">慧通理財</a></li>
+                <li><a href="#">環球理財</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="back-link">
+        <a href="index.html">← 返回團隊首頁</a>
+    </div>
+    
+    <div class="profile-container">
+        <div class="profile-card">
+            <div class="profile-header">
+                <div class="avatar-large">HK</div>
+                <div class="profile-name">Hang Kwok</div>
+                <div class="profile-role">研究助理 · Research Assistant</div>
+            </div>
+            <div class="profile-body">
+                <div class="section">
+                    <div class="section-title">職責範圍</div>
+                    <div class="section-content">
+                        負責市場研究與資料整理分析，協助團隊完成各項風險研究專案。整理行業數據與市場資訊，編製研究報告。
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <div class="section-title">專業領域</div>
+                    <div class="skills">
+                        <span class="skill">市場研究</span>
+                        <span class="skill">資料整理</span>
+                        <span class="skill">數據分析</span>
+                        <span class="skill">報告編製</span>
+                        <span class="skill">Excel</span>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <div class="section-title">工作成就</div>
+                    <div class="section-content">
+                        <p>• 完成多份市場研究報告，獲主管嘉許</p>
+                        <p>• 建立資料整理模板，提高效率 50%</p>
+                        <p>• 協助團隊完成年度風險評估專案</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>關於我們</h4>
+                    <ul>
+                        <li><a href="#">集團簡介</a></li>
+                        <li><a href="#">管理層</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>法律資訊</h4>
+                    <ul>
+                        <li><a href="#">私隱政策</a></li>
+                        <li><a href="#">章則及條款</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <a href="#">變更通知</a> |
+            <a href="#">隱私權政策聲明</a> |
+            <a href="#">章則及條款</a>
+            <p>© 上海商業銀行有限公司 風險分析團隊</p>
+            <p>香港皇后大道中 99 號中銀大廈 18-22 樓</p>
+        </div>
+    </footer>
 </body>
 </html>
