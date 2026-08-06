@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上海商業銀行風險分析團隊</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+        .header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .bank-logo {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        .header h1 {
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+        .header h1 strong {
+            font-weight: 700;
+            color: #e94560;
+        }
+        .header p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            letter-spacing: 2px;
+        }
+        .team-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 40px;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .member-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: #fff;
+            display: block;
+        }
+        .member-card:hover {
+            transform: translateY(-8px);
+            background: rgba(233, 69, 96, 0.15);
+            border-color: #e94560;
+            box-shadow: 0 20px 40px rgba(233, 69, 96, 0.2);
+        }
+        .member-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e94560, #0f3460);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .member-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .member-card .role {
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 1px;
+        }
+        .member-card .divider {
+            width: 40px;
+            height: 2px;
+            background: #e94560;
+            margin: 15px auto;
+            border-radius: 1px;
+        }
+        .member-card .intro {
+            font-size: 13px;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.6;
+        }
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 12px;
+            color: rgba(255,255,255,0.3);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="bank-logo">🏦</div>
+        <h1><strong>上海商業銀行</strong> 風險分析團隊</h1>
+        <p>SZCB RISK ANALYSIS TEAM</p>
+    </div>
+
+    <div class="team-section">
+        <p class="section-title">── 團隊成員 ──</p>
+        <div class="team-grid">
+            <a href="tony.html" class="member-card">
+                <div class="member-avatar">TC</div>
+                <h3>Tony Chan</h3>
+                <div class="divider"></div>
+                <p class="role">團隊領導</p>
+                <p class="intro">負責整體風險策略規劃與團隊管理</p>
+            </a>
+            <a href="vivian.html" class="member-card">
+                <div class="member-avatar">VZ</div>
+                <h3>Vivian Zhang</h3>
+                <div class="divider"></div>
+                <p class="role">風險分析師</p>
+                <p class="intro">專責信用風險建模與市場風險評估</p>
+            </a>
+            <a href="eddie.html" class="member-card">
+                <div class="member-avatar">ET</div>
+                <h3>Eddie Tsui</h3>
+                <div class="divider"></div>
+                <p class="role">數據科學家</p>
+                <p class="intro">負責大數據分析與預測模型開發</p>
+            </a>
+            <a href="martin.html" class="member-card">
+                <div class="member-avatar">MN</div>
+                <h3>Martin Ng</h3>
+                <div class="divider"></div>
+                <p class="role">合規專員</p>
+                <p class="intro">負責監管合規與內部控制審閱</p>
+            </a>
+            <a href="hang.html" class="member-card">
+                <div class="member-avatar">HK</div>
+                <h3>Hang Kwok</h3>
+                <div class="divider"></div>
+                <p class="role">研究助理</p>
+                <p class="intro">負責市場研究與資料整理分析</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>上海商業銀行風險分析團隊 © 2026</p>
+        <p>INTERNAL USE ONLY</p>
+    </div>
+</body>
+</html>
