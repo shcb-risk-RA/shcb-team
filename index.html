@@ -14,11 +14,9 @@
         .alert-bar {
             background: #FFF8E7;
             border-bottom: 1px solid #FFE4B5;
-            padding: 12px 0;
+            padding: 10px 0;
             font-size: 13px;
             overflow: hidden;
-            position: relative;
-            height: 34px;
         }
         .alert-bar-inner {
             max-width: 1200px;
@@ -27,7 +25,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 100%;
+            height: 24px;
+        }
+        .alert-left {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            height: 24px;
         }
         .alert-text {
             color: #c47a10;
@@ -35,23 +39,27 @@
             white-space: nowrap;
             animation: scroll-text 20s linear infinite;
             position: absolute;
-            left: 150px;
-            top: 10px;
+            left: 0;
+            top: 0;
+            height: 24px;
+            line-height: 24px;
         }
         @keyframes scroll-text {
             0% { transform: translateX(0); }
-            100% { transform: translateX(-150%); }
+            100% { transform: translateX(-100%); }
         }
-        .top-links {
-            margin-left: auto;
-            z-index: 10;
-            background: #FFF8E7;
+        .alert-right {
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
         }
-        .top-links a {
+        .alert-right a {
             color: #1a6fbf;
             text-decoration: none;
             margin-left: 15px;
             font-size: 12px;
+            white-space: nowrap;
         }
         .main-header {
             background: white;
@@ -197,8 +205,10 @@
 <body>
     <div class="alert-bar">
         <div class="alert-bar-inner">
-            <span class="alert-text">提示：此網站作RA 團隊內部溝通用途。</span>
-            <div class="top-links">
+            <div class="alert-left">
+                <span class="alert-text">提示：此網站作RA 團隊內部溝通用途。</span>
+            </div>
+            <div class="alert-right">
                 <a href="#">偏好設定</a>
                 <a href="#">聯絡我們</a>
             </div>
