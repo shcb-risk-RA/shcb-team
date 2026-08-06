@@ -3,171 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>上海商業銀行風險分析團隊</title>
+    <title>上海商業銀行 風險分析團隊</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            min-height: 100vh;
-            color: #fff;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
         }
-        .header {
+        /* 頂部導航 */
+        .top-bar {
+            background: linear-gradient(135deg, #003366 0%, #004080 100%);
+            color: white;
+            padding: 15px 0;
             text-align: center;
-            padding: 60px 20px 40px;
-            background: rgba(255,255,255,0.05);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
         .bank-logo {
-            font-size: 48px;
-            margin-bottom: 15px;
-        }
-        .header h1 {
-            font-size: 32px;
-            font-weight: 300;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-        }
-        .header h1 strong {
-            font-weight: 700;
-            color: #e94560;
-        }
-        .header p {
-            font-size: 14px;
-            color: rgba(255,255,255,0.6);
+            font-size: 24px;
+            font-weight: 600;
             letter-spacing: 2px;
         }
+        .bank-logo span {
+            color: #c41230;
+            font-weight: 700;
+        }
+        /* 主標題區 */
+        .hero {
+            background: linear-gradient(135deg, #e8f4f8 0%, #f0f8ff 50%, #fff8e7 100%);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 3px solid #003366;
+        }
+        .hero h1 {
+            font-size: 32px;
+            color: #003366;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .hero h1 span {
+            color: #c41230;
+        }
+        .hero p {
+            font-size: 14px;
+            color: #666;
+            letter-spacing: 1px;
+        }
+        /* 團隊區域 */
         .team-section {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 50px 20px;
         }
         .section-title {
             text-align: center;
-            font-size: 18px;
-            font-weight: 300;
-            letter-spacing: 4px;
-            color: rgba(255,255,255,0.5);
+            font-size: 20px;
+            color: #003366;
             margin-bottom: 40px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            position: relative;
         }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #c41230;
+            margin: 10px auto 0;
+        }
+        /* 團隊卡片網格 */
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
         }
-        .member-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 16px;
+        .team-card {
+            background: white;
+            border-radius: 8px;
             padding: 30px;
             text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
-            cursor: pointer;
+            border: 1px solid #e0e0e0;
             text-decoration: none;
-            color: #fff;
+            color: inherit;
             display: block;
         }
-        .member-card:hover {
-            transform: translateY(-8px);
-            background: rgba(233, 69, 96, 0.15);
-            border-color: #e94560;
-            box-shadow: 0 20px 40px rgba(233, 69, 96, 0.2);
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,51,102,0.15);
+            border-color: #003366;
         }
-        .member-avatar {
+        .team-card:hover .card-name {
+            color: #c41230;
+        }
+        /* 頭像 */
+        .avatar {
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #e94560, #0f3460);
+            margin: 0 auto 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
             font-size: 28px;
             font-weight: 700;
-            letter-spacing: 1px;
+            color: white;
         }
-        .member-card h3 {
+        .tc { background: linear-gradient(135deg, #003366, #00509e); }
+        .vz { background: linear-gradient(135deg, #c41230, #e62040); }
+        .et { background: linear-gradient(135deg, #006838, #00884a); }
+        .mn { background: linear-gradient(135deg, #f7941d, #ffaa33); }
+        .hk { background: linear-gradient(135deg, #6b7280, #9ca3af); }
+        /* 卡片內容 */
+        .card-name {
             font-size: 20px;
             font-weight: 600;
-            margin-bottom: 8px;
+            color: #003366;
+            margin-bottom: 5px;
+            transition: color 0.3s;
         }
-        .member-card .role {
-            font-size: 13px;
-            color: rgba(255,255,255,0.5);
-            letter-spacing: 1px;
-        }
-        .member-card .divider {
-            width: 40px;
-            height: 2px;
-            background: #e94560;
-            margin: 15px auto;
-            border-radius: 1px;
-        }
-        .member-card .intro {
-            font-size: 13px;
-            color: rgba(255,255,255,0.6);
-            line-height: 1.6;
-        }
-        .footer {
-            text-align: center;
-            padding: 30px 20px;
+        .card-role {
             font-size: 12px;
-            color: rgba(255,255,255,0.3);
-            border-top: 1px solid rgba(255,255,255,0.05);
+            color: #c41230;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        .card-desc {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
+        /* 頁尾 */
+        .footer {
+            background: #003366;
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 12px;
+            margin-top: 50px;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="bank-logo">🏦</div>
-        <h1><strong>上海商業銀行</strong> 風險分析團隊</h1>
-        <p>SZCB RISK ANALYSIS TEAM</p>
+    <!-- 頂部 -->
+    <div class="top-bar">
+        <div class="bank-logo">上海商業<span>儲蓄銀行</span></div>
     </div>
-
+    
+    <!-- 主標題 -->
+    <div class="hero">
+        <h1>風險分析<span>團隊</span></h1>
+        <p>RISK ANALYSIS TEAM</p>
+    </div>
+    
+    <!-- 團隊成員 -->
     <div class="team-section">
-        <p class="section-title">── 團隊成員 ──</p>
+        <h2 class="section-title">團隊成員</h2>
         <div class="team-grid">
-            <a href="tony.html" class="member-card">
-                <div class="member-avatar">TC</div>
-                <h3>Tony Chan</h3>
-                <div class="divider"></div>
-                <p class="role">團隊領導</p>
-                <p class="intro">負責整體風險策略規劃與團隊管理</p>
+            <a href="tony.html" class="team-card">
+                <div class="avatar tc">TC</div>
+                <div class="card-name">Tony Chan</div>
+                <div class="card-role">團隊領導</div>
+                <div class="card-desc">負責整體風險策略規劃與團隊管理</div>
             </a>
-            <a href="vivian.html" class="member-card">
-                <div class="member-avatar">VZ</div>
-                <h3>Vivian Zhang</h3>
-                <div class="divider"></div>
-                <p class="role">風險分析師</p>
-                <p class="intro">專責信用風險建模與市場風險評估</p>
+            
+            <a href="vivian.html" class="team-card">
+                <div class="avatar vz">VZ</div>
+                <div class="card-name">Vivian Zhang</div>
+                <div class="card-role">風險分析師</div>
+                <div class="card-desc">專責信用風險建模與市場風險評估</div>
             </a>
-            <a href="eddie.html" class="member-card">
-                <div class="member-avatar">ET</div>
-                <h3>Eddie Tsui</h3>
-                <div class="divider"></div>
-                <p class="role">數據科學家</p>
-                <p class="intro">負責大數據分析與預測模型開發</p>
+            
+            <a href="eddie.html" class="team-card">
+                <div class="avatar et">ET</div>
+                <div class="card-name">Eddie Tsui</div>
+                <div class="card-role">數據科學家</div>
+                <div class="card-desc">負責大數據分析與預測模型開發</div>
             </a>
-            <a href="martin.html" class="member-card">
-                <div class="member-avatar">MN</div>
-                <h3>Martin Ng</h3>
-                <div class="divider"></div>
-                <p class="role">合規專員</p>
-                <p class="intro">負責監管合規與內部控制審閱</p>
+            
+            <a href="martin.html" class="team-card">
+                <div class="avatar mn">MN</div>
+                <div class="card-name">Martin Ng</div>
+                <div class="card-role">合規專員</div>
+                <div class="card-desc">負責監管合規與內部控制審閱</div>
             </a>
-            <a href="hang.html" class="member-card">
-                <div class="member-avatar">HK</div>
-                <h3>Hang Kwok</h3>
-                <div class="divider"></div>
-                <p class="role">研究助理</p>
-                <p class="intro">負責市場研究與資料整理分析</p>
+            
+            <a href="hang.html" class="team-card">
+                <div class="avatar hk">HK</div>
+                <div class="card-name">Hang Kwok</div>
+                <div class="card-role">研究助理</div>
+                <div class="card-desc">負責市場研究與資料整理分析</div>
             </a>
         </div>
     </div>
-
+    
+    <!-- 頁尾 -->
     <div class="footer">
-        <p>上海商業銀行風險分析團隊 © 2026</p>
-        <p>INTERNAL USE ONLY</p>
+        <a href="#">關於我們</a> |
+        <a href="#">聯絡我們</a> |
+        <a href="#">私隱政策</a>
+        <br><br>
+        © 上海商業儲蓄銀行有限公司 風險分析團隊
     </div>
 </body>
 </html>
