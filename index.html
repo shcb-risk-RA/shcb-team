@@ -14,10 +14,11 @@
         .alert-bar {
             background: #FFF8E7;
             border-bottom: 1px solid #FFE4B5;
-            padding: 12px 0;
+            padding: 10px 0;
             font-size: 13px;
             overflow: hidden;
             position: relative;
+            height: 34px;
         }
         .alert-bar-inner {
             max-width: 1200px;
@@ -33,20 +34,26 @@
             white-space: nowrap;
             animation: scroll-text 20s linear infinite;
             position: absolute;
-            left: 100px;
-            top: 12px;
+            left: 150px;
+            top: 10px;
         }
         @keyframes scroll-text {
             0% { transform: translateX(0); }
+            100% { transform: translateX(-150%); }
+        }
             100% { transform: translateX(-200%); }
         }
         .top-links {
             margin-left: auto;
             z-index: 10;
             background: #FFF8E7;
-            padding-left: 10px;
         }
-        .top-links a { color: #1a6fbf; text-decoration: none; margin-left: 20px; font-size: 12px; }
+        .top-links a {
+            color: #1a6fbf;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 12px;
+        }
         .main-header {
             background: white;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
